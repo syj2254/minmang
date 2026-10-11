@@ -1,0 +1,180 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #1a1a1a;
+}
+
+.top-nav {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  z-index: 100;
+}
+.top-nav .nav-link {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+.top-nav .nav-link:hover, .top-nav .nav-link.active {
+  color: #ee388f;
+  transform: scale(1.08);
+}
+
+.city-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.city-container .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.city-container .bg-image {
+  z-index: 1;
+}
+.city-container a.layer {
+  z-index: 2;
+  cursor: pointer;
+}
+.city-container a.layer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.3s ease-in-out, transform 0.3s ease;
+}
+.city-container a.layer:hover {
+  z-index: 10;
+}
+.city-container a.layer:hover img {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 25px rgba(255, 105, 180, 0.7));
+  transform: translateY(-5px);
+}
+.city-container .bldg-left {
+  clip-path: polygon(0% 0%, 34% 0%, 34% 100%, 0% 100%);
+}
+.city-container .bldg-center {
+  clip-path: polygon(34% 0%, 67% 0%, 67% 100%, 34% 100%);
+}
+.city-container .bldg-right {
+  clip-path: polygon(67% 0%, 100% 0%, 100% 100%, 67% 100%);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-overlay .modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-height: 90vh;
+}
+.modal-overlay .modal-content .elevator-panel {
+  position: relative;
+  height: 80vh;
+}
+.modal-overlay .modal-content .elevator-panel img {
+  display: block;
+  width: auto;
+  height: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+}
+.modal-overlay .modal-content .elevator-panel .btn-floor {
+  position: absolute;
+  right: 13.5%;
+  width: 12%;
+  height: 6%;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.modal-overlay .modal-content #elevator-1 .f4 {
+  top: 30%;
+}
+.modal-overlay .modal-content #elevator-1 .f3 {
+  top: 45%;
+}
+.modal-overlay .modal-content #elevator-1 .f2 {
+  top: 60%;
+}
+.modal-overlay .modal-content #elevator-1 .f1 {
+  top: 75%;
+}
+.modal-overlay .modal-content #elevator-2 .f6 {
+  top: 23.2%;
+}
+.modal-overlay .modal-content #elevator-2 .f5 {
+  top: 34.2%;
+}
+.modal-overlay .modal-content #elevator-2 .f4 {
+  top: 45.2%;
+}
+.modal-overlay .modal-content #elevator-2 .f3 {
+  top: 56.2%;
+}
+.modal-overlay .modal-content #elevator-2 .f2 {
+  top: 67.2%;
+}
+.modal-overlay .modal-content #elevator-2 .f1 {
+  top: 78.2%;
+}
+.modal-overlay .modal-content #elevator-3 .f4 {
+  top: 30%;
+}
+.modal-overlay .modal-content #elevator-3 .f3 {
+  top: 45%;
+}
+.modal-overlay .modal-content #elevator-3 .f2 {
+  top: 60%;
+}
+.modal-overlay .modal-content #elevator-3 .f1 {
+  top: 75%;
+}
+.modal-overlay .modal-content .close-btn {
+  position: absolute;
+  top: 0px;
+  right: -50px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-overlay .modal-content .close-btn:hover {
+  color: #ff69b4;
+}

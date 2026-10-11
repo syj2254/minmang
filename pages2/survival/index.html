@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>minmang</title>
+    <link rel="stylesheet" href="style/survival.css" />
+  </head>
+  <body class="survival-body">
+    <!-- 🌟 상단 네비게이션 (Home 및 Survival Tips만 남김) -->
+    <header class="top-nav">
+      <nav class="nav-menu">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Survival Tips</a>
+      </nav>
+    </header>
+
+    <!-- 🌟 메인 컨테이너 -->
+    <main class="survival-container">
+      <div class="survival-header">
+        <h1>Survival Tips Board</h1>
+        <p>
+          상황별로 나만의 아찔한 대처법을 공유하고, AI가 분석한 상황별
+          인사이트를 확인하세요.
+        </p>
+      </div>
+
+      <!-- 🏷️ 14개 개별 카테고리 탭 버튼 -->
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">전체보기</button>
+        <button class="tab-btn" data-category="sock-hole">
+          # 구멍 뚫린 양말
+        </button>
+        <button class="tab-btn" data-category="sock-mismatch">
+          # 짝짝이 양말
+        </button>
+        <button class="tab-btn" data-category="makeup"># 번진 화장</button>
+        <button class="tab-btn" data-category="nosehair">
+          # 삐져나온 코털
+        </button>
+        <button class="tab-btn" data-category="hair"># 안 감은 머리</button>
+        <button class="tab-btn" data-category="darkcircle">
+          # 심한 다크서클
+        </button>
+        <button class="tab-btn" data-category="fashion">
+          # 패션테러리스트
+        </button>
+        <button class="tab-btn" data-category="zipper"># 지퍼 열린 바지</button>
+        <button class="tab-btn" data-category="fart"># 방귀 소리</button>
+        <button class="tab-btn" data-category="stomach"># 꼬르륵 소리</button>
+        <button class="tab-btn" data-category="spaghetti-clothes">
+          # 옷에 묻은 스파게티
+        </button>
+        <button class="tab-btn" data-category="spaghetti-mouth">
+          # 입에 묻은 스파게티
+        </button>
+        <button class="tab-btn" data-category="sweat"># 땀나는 겨드랑이</button>
+        <button class="tab-btn" data-category="tissue"># 팬티에 낀 휴지</button>
+      </div>
+
+      <!-- 🤖 AI 요약 박스 -->
+      <div class="ai-summary-box">
+        <span class="ai-badge">AI Insight - 전체 요약</span>
+        <p class="ai-summary-text">
+          "현재 모든 상황을 분석한 결과, 사람들이 위기 순간에 주로
+          <b>시선을 회피하거나 모르는 척 넘어가는 방법</b>을 가장 많이 사용하고
+          있습니다."
+        </p>
+      </div>
+
+      <!-- ✍️ 의견 작성 입력 섹션 -->
+      <div class="input-section">
+        <div class="input-header">
+          <label for="situation-select">상황 선택:</label>
+          <select id="situation-select">
+            <option value="sock-hole">구멍 뚫린 양말</option>
+            <option value="sock-mismatch">짝짝이 양말</option>
+            <option value="makeup">번진 화장</option>
+            <option value="nosehair">삐져나온 코털</option>
+            <option value="hair">안 감은 머리</option>
+            <option value="darkcircle">심한 다크서클</option>
+            <option value="fashion">패션테러리스트</option>
+            <option value="zipper">지퍼 열린 바지</option>
+            <option value="fart">방귀 소리</option>
+            <option value="stomach">꼬르륵 소리</option>
+            <option value="spaghetti-clothes">옷에 묻은 스파게티</option>
+            <option value="spaghetti-mouth">입에 묻은 스파게티</option>
+            <option value="sweat">땀나는 겨드랑이</option>
+            <option value="tissue">팬티에 낀 휴지</option>
+          </select>
+        </div>
+        <textarea
+          placeholder="이 상황에서 나만의 아찔했던 대처법을 남겨주세요..."
+        ></textarea>
+        <button class="submit-btn">익명으로 공유하기</button>
+      </div>
+
+      <!-- 💬 피드 리스트 -->
+      <div class="tip-list">
+        <div class="tip-card" data-category="sock-hole">
+          <span class="card-tag"># 구멍 뚫린 양말</span>
+          <p>
+            "신발 벗는 식당에서 양말 구멍 난 거 발견하자마자 발가락에 힘주고
+            최대한 안 보이게 구석으로 기어갔습니다."
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- ⚡ 공유 및 탭 기능 자바스크립트 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const submitBtn = document.querySelector(".submit-btn");
+        const textarea = document.querySelector(".input-section textarea");
+        const select = document.querySelector("#situation-select");
+        const tipList = document.querySelector(".tip-list");
+        const tabBtns = document.querySelectorAll(".tab-btn");
+
+        // 1. 공유하기 버튼 클릭 기능
+        submitBtn.addEventListener("click", () => {
+          const content = textarea.value.trim();
+          if (!content) {
+            alert("내용을 입력해주세요!");
+            return;
+          }
+
+          const selectedValue = select.value;
+          const selectedOptionText = select.options[select.selectedIndex].text;
+
+          const newCard = document.createElement("div");
+          newCard.className = "tip-card";
+          newCard.setAttribute("data-category", selectedValue);
+          newCard.innerHTML = `
+            <span class="card-tag"># ${selectedOptionText}</span>
+            <p>"${content}"</p>
+          `;
+
+          tipList.prepend(newCard);
+          textarea.value = "";
+          alert("성공적으로 공유되었습니다!");
+        });
+
+        // 2. 상단 카테고리 탭 클릭 시 활성화 및 필터링 기능
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            tabBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const category = btn.getAttribute("data-category");
+            const cards = tipList.querySelectorAll(".tip-card");
+
+            cards.forEach((card) => {
+              if (
+                category === "all" ||
+                card.getAttribute("data-category") === category
+              ) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

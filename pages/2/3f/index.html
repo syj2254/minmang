@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turn off the switch - minmang</title>
+
+    <!-- 구글 폰트 'Slackey' 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slackey&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 스타일 파일 연결 (현재 위치 기준 깊이 반영: ../../../../) -->
+    <link rel="stylesheet" href="../../../../style/main.css" />
+    <link rel="stylesheet" href="style/3f.css" />
+  </head>
+  <body>
+    <main class="floor-wrapper">
+      <!-- 🟢 왼쪽 연두색 영역 -->
+      <section class="left-side">
+        <!-- 뒤로가기 화살표 버튼 -->
+        <a href="../../../../index.html" class="back-btn">&#8592;</a>
+
+        <!-- 왼쪽 메인 일러스트 (레스토랑 관련 에셋 반영) -->
+        <img
+          id="mainIllustration"
+          src="../../../../images/레스토랑2.svg"
+          alt="레스토랑 상황"
+          class="main-img"
+        />
+      </section>
+
+      <!-- 🔴 오른쪽 핑크색 영역 -->
+      <section class="right-side">
+        <h1 class="title">Turn off<br />the<br />switch</h1>
+
+        <p class="desc">
+          열심히 대화를 나누고 거울을 봤는데 앞니에 빨간 스파게티 소스나
+          고춧가루가 흉하게 낀 상황, 방금까지 나에게 환하게 웃어주던 상대가
+          사실은 그 이빨만 보고 있었을 것만 같은 상황이다. 근데 과연 진짜
+          그럴까?
+        </p>
+
+        <!-- 스위치 위치 고정용 박스 -->
+        <div class="switch-box">
+          <img
+            id="switchButton"
+            src="../../../../images/스위치오프.svg"
+            alt="스위치"
+            class="switch-img"
+          />
+        </div>
+
+        <!-- 🔗 수정된 링크: pages2/survival로 이동 및 카테고리 파라미터 전달 (레스토랑/스파게티 관련인 경우 적절한 카테고리로 변경 가능) -->
+        <a
+          href="../../../pages2/survival/index.html?category=spaghetti-clothes"
+          class="next-tip"
+          >Survival Tips &rarr;</a
+        >
+      </section>
+    </main>
+
+    <!-- 스위치 온오프 및 일러스트 변경 자바스크립트 -->
+    <script>
+      const switchBtn = document.getElementById("switchButton");
+      const mainImg = document.getElementById("mainIllustration");
+
+      let isSwitched = false;
+
+      switchBtn.addEventListener("click", () => {
+        isSwitched = !isSwitched;
+
+        if (isSwitched) {
+          mainImg.src = "../../../../images/레스토랑2원본.svg";
+          switchBtn.src = "../../../../images/스위치온.svg";
+        } else {
+          mainImg.src = "../../../../images/레스토랑2.svg";
+          switchBtn.src = "../../../../images/스위치오프.svg";
+        }
+      });
+    </script>
+  </body>
+</html>

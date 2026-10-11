@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turn off the switch - minmang</title>
+
+    <!-- 구글 폰트 'Slackey' 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slackey&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 스타일 파일 연결 (현재 위치 기준 깊이 반영: ../../../../) -->
+    <link rel="stylesheet" href="../../../../style/main.css" />
+    <link rel="stylesheet" href="style/1f.css" />
+  </head>
+  <body>
+    <main class="floor-wrapper">
+      <!-- 🟢 왼쪽 연두색 영역 -->
+      <section class="left-side">
+        <!-- 뒤로가기 화살표 버튼 -->
+        <a href="../../../../index.html" class="back-btn">&#8592;</a>
+
+        <!-- 왼쪽 메인 일러스트 (회사 관련 에셋 반영) -->
+        <img
+          id="mainIllustration"
+          src="../../../../images/회사2.svg"
+          alt="회사 상황"
+          class="main-img"
+        />
+      </section>
+
+      <!-- 🔴 오른쪽 핑크색 영역 -->
+      <section class="right-side">
+        <h1 class="title">Turn off<br />the<br />switch</h1>
+
+        <p class="desc">
+          화장실을 다녀온 뒤 볼일을 보고 나왔는데, 바지나 팬티 뒤쪽에 하얀
+          화장지 조각이 길게 매달려 끌려 나오고 있던 상황, 오늘 하루 종일
+          돌아다닌 모든 동선에서 사람들이 이걸 다 봤을 것만 같은 상황이다. 근데
+          과연 진짜 그럴까?
+
+          <!-- 스위치 위치 고정용 박스 -->
+        </p>
+
+        <div class="switch-box">
+          <img
+            id="switchButton"
+            src="../../../../images/스위치오프.svg"
+            alt="스위치"
+            class="switch-img"
+          />
+        </div>
+
+        <!-- 🔗 수정된 링크: pages2/survival로 이동 및 카테고리 파라미터 전달 -->
+        <a
+          href="../../../pages2/survival/index.html?category=fart"
+          class="next-tip"
+          >Survival Tips &rarr;</a
+        >
+      </section>
+    </main>
+
+    <!-- 스위치 온오프 및 일러스트 변경 자바스크립트 -->
+    <script>
+      const switchBtn = document.getElementById("switchButton");
+      const mainImg = document.getElementById("mainIllustration");
+
+      let isSwitched = false;
+
+      switchBtn.addEventListener("click", () => {
+        isSwitched = !isSwitched;
+
+        if (isSwitched) {
+          mainImg.src = "../../../../images/회사2원본.svg";
+          switchBtn.src = "../../../../images/스위치온.svg";
+        } else {
+          mainImg.src = "../../../../images/회사2.svg";
+          switchBtn.src = "../../../../images/스위치오프.svg";
+        }
+      });
+    </script>
+  </body>
+</html>

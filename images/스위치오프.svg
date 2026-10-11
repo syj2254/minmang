@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 315.96 449.59">
+  <!-- Generator: Adobe Illustrator 30.6.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 109)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st0, .st1 {
+        stroke: #221f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="315.96" height="449.59" rx="5.13" ry="5.13"/>
+  <rect class="st0" width="315.96" height="449.59" rx="5.13" ry="5.13"/>
+  <rect class="st0" x="112.58" y="117.33" width="90.8" height="216.35"/>
+  <circle class="st0" cx="157.98" cy="64.37" r="14.54"/>
+  <line class="st0" x1="112.58" y1="225.5" x2="203.38" y2="225.5"/>
+  <ellipse class="st0" cx="157.98" cy="266.02" rx="17.36" ry="11.61"/>
+  <line class="st0" x1="157.98" y1="150.91" x2="157.98" y2="193.52"/>
+  <line class="st0" x1="157.98" y1="56.57" x2="157.98" y2="72.18"/>
+  <line class="st0" x1="165.78" y1="64.37" x2="150.17" y2="64.37"/>
+  <circle class="st0" cx="157.98" cy="386.63" r="14.54"/>
+  <line class="st0" x1="157.98" y1="378.82" x2="157.98" y2="394.43"/>
+  <line class="st0" x1="165.78" y1="386.63" x2="150.17" y2="386.63"/>
+  <line class="st0" x1="112.58" y1="304.48" x2="203.38" y2="304.48"/>
+  <rect class="st0" x="-51.98" y="81.66" width="419.92" height="286.28" rx="1.04" ry="1.04" transform="translate(382.78 66.82) rotate(90)"/>
+</svg>

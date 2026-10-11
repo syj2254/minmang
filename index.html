@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>minmang</title>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="pages2/survival/index.html" class="nav-link">Survival Tips</a>
+    </header>
+
+    <main class="city-container">
+      <img src="images/도시.svg" alt="메인 도시 배경" class="layer bg-image" />
+
+      <a
+        href="javascript:void(0)"
+        class="layer bldg-left open-elevator"
+        data-target="elevator-1"
+      >
+        <img src="images/건물1.svg" alt="왼쪽 건물" />
+      </a>
+
+      <a
+        href="javascript:void(0)"
+        class="layer bldg-center open-elevator"
+        data-target="elevator-2"
+      >
+        <img src="images/건물2.svg" alt="중앙 돔 건물" />
+      </a>
+
+      <a
+        href="javascript:void(0)"
+        class="layer bldg-right open-elevator"
+        data-target="elevator-3"
+      >
+        <img src="images/건물3.svg" alt="오른쪽 건물" />
+      </a>
+    </main>
+
+    <div id="modal-elevator" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+
+        <div class="elevator-panel" id="elevator-1" style="display: none">
+          <img src="images/엘베버튼1.svg" alt="건물 1 엘리베이터" />
+          <a href="pages/1/4f/index.html" class="btn-floor f4"></a>
+          <a href="pages/1/3f/index.html" class="btn-floor f3"></a>
+          <a href="pages/1/2f/index.html" class="btn-floor f2"></a>
+          <a href="pages/1/1f/index.html" class="btn-floor f1"></a>
+        </div>
+
+        <div class="elevator-panel" id="elevator-2" style="display: none">
+          <img src="images/엘베버튼2.svg" alt="건물 2 엘리베이터" />
+          <a href="pages/2/6f/index.html" class="btn-floor f6"></a>
+          <a href="pages/2/5f/index.html" class="btn-floor f5"></a>
+          <a href="pages/2/4f/index.html" class="btn-floor f4"></a>
+          <a href="pages/2/3f/index.html" class="btn-floor f3"></a>
+          <a href="pages/2/2f/index.html" class="btn-floor f2"></a>
+          <a href="pages/2/1f/index.html" class="btn-floor f1"></a>
+        </div>
+
+        <div class="elevator-panel" id="elevator-3" style="display: none">
+          <img src="images/엘베버튼3.svg" alt="건물 3 엘리베이터" />
+          <a href="pages/3/4f/index.html" class="btn-floor f4"></a>
+          <a href="pages/3/3f/index.html" class="btn-floor f3"></a>
+          <a href="pages/3/2f/index.html" class="btn-floor f2"></a>
+          <a href="pages/3/1f/index.html" class="btn-floor f1"></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const bldgBtns = document.querySelectorAll(".open-elevator");
+      const modalElevator = document.getElementById("modal-elevator");
+      const closeBtn = document.getElementById("close-modal");
+      const allPanels = document.querySelectorAll(".elevator-panel");
+
+      bldgBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          allPanels.forEach((panel) => (panel.style.display = "none"));
+          const targetId = btn.getAttribute("data-target");
+          document.getElementById(targetId).style.display = "inline-block";
+          modalElevator.classList.add("show");
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modalElevator.classList.remove("show");
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target === modalElevator) {
+          modalElevator.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
