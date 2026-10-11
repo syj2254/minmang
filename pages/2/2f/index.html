@@ -13,8 +13,8 @@
       rel="stylesheet"
     />
 
-    <!-- 스타일 파일 연결 (현재 위치 기준 깊이 반영: ../../../../) -->
-    <link rel="stylesheet" href="../../../../style/main.css" />
+    <!-- 스타일 파일 연결 (pages/2/2f/ 기준 → 최상위까지 3칸: ../../../) -->
+    <link rel="stylesheet" href="../../../style/main.css" />
     <link rel="stylesheet" href="style/2f.css" />
   </head>
   <body>
@@ -22,12 +22,12 @@
       <!-- 🟢 왼쪽 연두색 영역 -->
       <section class="left-side">
         <!-- 뒤로가기 화살표 버튼 -->
-        <a href="../../../../index.html" class="back-btn">&#8592;</a>
+        <a href="../../../index.html" class="back-btn">&#8592;</a>
 
-        <!-- 왼쪽 메인 일러스트 (회사2 관련 에셋 반영) -->
+        <!-- 왼쪽 메인 일러스트 -->
         <img
           id="mainIllustration"
-          src="../../../../images/회사1.svg"
+          src="../../../images/회사1.svg"
           alt="회사 상황"
           class="main-img"
         />
@@ -47,15 +47,15 @@
         <div class="switch-box">
           <img
             id="switchButton"
-            src="../../../../images/스위치오프.svg"
+            src="../../../images/스위치오프.svg"
             alt="스위치"
             class="switch-img"
           />
         </div>
 
-        <!-- 🔗 수정된 링크: pages2/survival로 이동 및 카테고리 파라미터 전달 -->
+        <!-- 🔗 Survival Tips (땀나는 겨드랑이) -->
         <a
-          href="../../../pages2/survival/index.html?category=fart"
+          href="../../../pages2/survival/index.html?category=sweat"
           class="next-tip"
           >Survival Tips &rarr;</a
         >
@@ -73,11 +73,11 @@
         isSwitched = !isSwitched;
 
         if (isSwitched) {
-          mainImg.src = "../../../../images/회사1.svg";
-          switchBtn.src = "../../../../images/스위치온.svg";
+          mainImg.src = "../../../images/회사1.svg";
+          switchBtn.src = "../../../images/스위치온.svg";
         } else {
-          mainImg.src = "../../../../images/회사1.svg";
-          switchBtn.src = "../../../../images/스위치오프.svg";
+          mainImg.src = "../../../images/회사1.svg";
+          switchBtn.src = "../../../images/스위치오프.svg";
         }
       });
     </script>

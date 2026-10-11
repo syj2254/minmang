@@ -13,8 +13,8 @@
       rel="stylesheet"
     />
 
-    <!-- 스타일 파일 연결 (현재 위치 기준 깊이 반영: ../../../) -->
-    <link rel="stylesheet" href="../../../../style/main.css" />
+    <!-- 스타일 파일 연결 (pages/1/1f/ 기준 → 최상위까지 3칸: ../../../) -->
+    <link rel="stylesheet" href="../../../style/main.css" />
     <link rel="stylesheet" href="style/1f.css" />
   </head>
   <body>
@@ -22,13 +22,13 @@
       <!-- 🟢 왼쪽 연두색 영역 -->
       <section class="left-side">
         <!-- 뒤로가기 화살표 버튼 -->
-        <a href="../../../../index.html" class="back-btn">&#8592;</a>
+        <a href="../../../index.html" class="back-btn">&#8592;</a>
 
         <!-- 왼쪽 메인 일러스트 -->
         <img
           id="mainIllustration"
-          src="../../../../images/화장실2.svg"
-          alt="독서실 상황"
+          src="../../../images/화장실2.svg"
+          alt="화장실 상황"
           class="main-img"
         />
       </section>
@@ -47,15 +47,15 @@
         <div class="switch-box">
           <img
             id="switchButton"
-            src="../../../../images/스위치오프.svg"
+            src="../../../images/스위치오프.svg"
             alt="스위치"
             class="switch-img"
           />
         </div>
 
-        <!-- 🔗 변경된 폴더 구조 반영: pages2/survival로 가는 올바른 상대 경로 -->
+        <!-- 🔗 Survival Tips (삐져나온 코털) -->
         <a
-          href="../../../pages2/survival/index.html?category=fart"
+          href="../../../pages2/survival/index.html?category=nosehair"
           class="next-tip"
           >Survival Tips &rarr;</a
         >
@@ -73,11 +73,11 @@
         isSwitched = !isSwitched;
 
         if (isSwitched) {
-          mainImg.src = "../../../../images/화장실원본.svg";
-          switchBtn.src = "../../../../images/스위치온.svg";
+          mainImg.src = "../../../images/화장실원본.svg";
+          switchBtn.src = "../../../images/스위치온.svg";
         } else {
-          mainImg.src = "../../../../images/화장실2.svg";
-          switchBtn.src = "../../../../images/스위치오프.svg";
+          mainImg.src = "../../../images/화장실2.svg";
+          switchBtn.src = "../../../images/스위치오프.svg";
         }
       });
     </script>

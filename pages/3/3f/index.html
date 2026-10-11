@@ -13,8 +13,8 @@
       rel="stylesheet"
     />
 
-    <!-- 스타일 파일 연결 (현재 위치 기준 깊이 반영: ../../../../) -->
-    <link rel="stylesheet" href="../../../../style/main.css" />
+    <!-- 스타일 파일 연결 (pages/3/3f/ 기준 → 최상위까지 3칸: ../../../) -->
+    <link rel="stylesheet" href="../../../style/main.css" />
     <link rel="stylesheet" href="style/3f.css" />
   </head>
   <body>
@@ -22,12 +22,12 @@
       <!-- 🟢 왼쪽 연두색 영역 -->
       <section class="left-side">
         <!-- 뒤로가기 화살표 버튼 -->
-        <a href="../../../../index.html" class="back-btn">&#8592;</a>
+        <a href="../../../index.html" class="back-btn">&#8592;</a>
 
         <!-- 왼쪽 메인 일러스트 (엘리베이터 관련 에셋 반영) -->
         <img
           id="mainIllustration"
-          src="../../../../images/엘레베이터2.svg"
+          src="../../../images/엘레베이터2.svg"
           alt="엘리베이터 상황"
           class="main-img"
         />
@@ -47,13 +47,13 @@
         <div class="switch-box">
           <img
             id="switchButton"
-            src="../../../../images/스위치오프.svg"
+            src="../../../images/스위치오프.svg"
             alt="스위치"
             class="switch-img"
           />
         </div>
 
-        <!-- 🔗 수정된 링크: pages2/survival로 이동 및 카테고리 파라미터 전달 (상황에 맞게 카테고리명 수정 가능) -->
+        <!-- 🔗 pages2/survival로 이동 및 카테고리 파라미터 전달 -->
         <a
           href="../../../pages2/survival/index.html?category=darkcircle"
           class="next-tip"
@@ -73,11 +73,11 @@
         isSwitched = !isSwitched;
 
         if (isSwitched) {
-          mainImg.src = "../../../../images/엘레베이터원본.svg";
-          switchBtn.src = "../../../../images/스위치온.svg";
+          mainImg.src = "../../../images/엘레베이터원본.svg";
+          switchBtn.src = "../../../images/스위치온.svg";
         } else {
-          mainImg.src = "../../../../images/엘레베이터2.svg";
-          switchBtn.src = "../../../../images/스위치오프.svg";
+          mainImg.src = "../../../images/엘레베이터2.svg";
+          switchBtn.src = "../../../images/스위치오프.svg";
         }
       });
     </script>

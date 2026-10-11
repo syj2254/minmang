@@ -159,8 +159,27 @@
                 card.style.display = "none";
               }
             });
+
+            // 탭을 고르면 '상황 선택'도 같이 맞춰줌
+            if (category !== "all") {
+              select.value = category;
+            }
           });
         });
+
+        // 3. 주소의 ?category= 값으로 해당 탭 자동 선택 (층 페이지에서 넘어올 때)
+        const startCategory = new URLSearchParams(location.search).get(
+          "category",
+        );
+        if (startCategory) {
+          const targetBtn = document.querySelector(
+            `.tab-btn[data-category="${startCategory}"]`,
+          );
+          if (targetBtn) {
+            targetBtn.click();
+            targetBtn.scrollIntoView({ inline: "center", block: "nearest" });
+          }
+        }
       });
     </script>
   </body>
